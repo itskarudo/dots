@@ -4,9 +4,9 @@
     enable = true;
     enableScriptingAddition = true;
     config = {
-      layout = "float";
+      layout = "bsp";
       window_gap = 6;
-      focus_follows_mouse = "autofocus";
+      focus_follows_mouse = "off";
       window_shadow = "float";
       mouse_modifier = "cmd";
       mouse_action1 = "move";

@@ -20,7 +20,7 @@
     bun
     cmake
     eza
-    neovim
+    # neovim
     ripgrep
     uv
     wget

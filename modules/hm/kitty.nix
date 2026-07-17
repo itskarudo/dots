@@ -8,7 +8,24 @@
       name = "Lilex";
       size = 13;
     };
+    keybindings = {
+      "ctrl+\\" = "launch --location=vsplit --cwd=current";
+      "ctrl+'" = "launch --location=hsplit --cwd=current";
+      "ctrl+a>z" = "combine : toggle_layout stack : scroll_prompt_to_bottom";
+    };
+    # these bindings need to be in extraConfig bcuz the order matters
+    extraConfig = ''
+map ctrl+h neighboring_window left
+map ctrl+j neighboring_window down
+map ctrl+k neighboring_window up
+map ctrl+l neighboring_window right
+map --when-focus-on var:IS_VIM=true ctrl+h
+map --when-focus-on var:IS_VIM=true ctrl+j
+map --when-focus-on var:IS_VIM=true ctrl+k
+map --when-focus-on var:IS_VIM=true ctrl+l
+  '';
     settings = {
+      enabled_layouts = "splits,stack";
       modify_font = "cell_height 200%";
       disable_ligatures = "cursor";
       allow_remote_control = "yes";

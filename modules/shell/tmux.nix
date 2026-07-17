@@ -2,7 +2,7 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
     mouse = true;
     keyMode = "vi";
     baseIndex = 1;

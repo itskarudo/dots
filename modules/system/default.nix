@@ -50,10 +50,6 @@
     ];
   };
 
-  environment.variables = {
-    EDITOR = "nvim";
-  };
-
   imports = [
     ./core.nix
     ./user.nix
