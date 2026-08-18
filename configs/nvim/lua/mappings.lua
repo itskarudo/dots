@@ -1,41 +1,36 @@
-local map = vim.keymap.set
+vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<cr>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":TmuxNavigateDown<cr>", { silent = true })
+vim.keymap.set("n", "<C-k>", ":TmuxNavigateUp<cr>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<cr>", { silent = true })
 
-map("i", "jk", "<Esc>")
-
-map("n", "<leader><leader>", ":nohl<CR>", { silent = true })
-map("n", "<C-n>", ":Neotree left toggle<CR>", { silent = true })
+vim.keymap.set("n", "<leader>n", ":Oil<CR>", { silent = true })
+vim.keymap.set("i", "jk", "<Esc>", { silent = true })
+vim.keymap.set("n", "<leader><leader>", ":nohl<CR>", { silent = true })
 
 local telescope = require("telescope.builtin")
+vim.keymap.set("n", "<leader>f", telescope.find_files, { silent = true })
+vim.keymap.set("n", "<leader>d", telescope.buffers, { silent = true })
+vim.keymap.set("n", "<leader>w", telescope.live_grep, { silent = true })
+vim.keymap.set("n", "<leader>h", telescope.help_tags, { silent = true })
 
-map("n", "<leader>f", telescope.find_files)
-map("n", "<leader>w", telescope.live_grep)
-map("n", "<leader>h", telescope.help_tags)
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { silent = true })
+vim.keymap.set("n", "<leader>b", ":enew<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", function()
+	if vim.bo.modified then
+		local choice = vim.fn.confirm("Buffer has unsaved changes. Close anyway?", "&Yes\n&No", 2)
+		if choice == 1 then
+			vim.cmd("bdelete!")
+		end
+	else
+		vim.cmd("bdelete")
+	end
+end, { desc = "Delete buffer (confirm if modified)" })
 
-local diag = require("diagnostics")
-map("n", "<leader>dk", function()
-	diag.cycle(-1)
-end)
-map("n", "<leader>dj", function()
-	diag.cycle(1)
-end)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { silent = true })
+vim.keymap.set("n", "<leader>ra", vim.lsp.buf.rename, { silent = true })
 
-map("n", "<S-k>", function()
-	vim.lsp.buf.hover({ border = "single" })
-end)
+vim.keymap.set("n", "<leader>s", vim.diagnostic.open_float, { silent = true })
 
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
-
-map({ "n" }, "gD", vim.lsp.buf.declaration)
-map({ "n" }, "gd", vim.lsp.buf.definition)
-
-map("n", "<Tab>", ":BufferNext<CR>", { silent = true })
-map("n", "<S-Tab>", ":BufferPrevious<CR>", { silent = true })
-map("n", "<leader>x", ":BufferClose<CR>", { silent = true })
-map("n", "<leader>b", ":enew<CR>", { silent = true })
-
-map("n", "<leader>ca", vim.lsp.buf.code_action)
-
-map("n", ";", ":", { noremap = true })
-
-map("n", "gp", ":Gitsigns preview_hunk_inline<CR>", { silent = true })
+vim.keymap.set("n", "gp", ":Gitsigns preview_hunk_inline<CR>", { silent = true })

@@ -29,15 +29,14 @@
       set -g status-style bg=default
       set -g status-left-length 99
       set -g status-right-length 99
-      set -g status-justify absolute-centre
       set -g allow-passthrough on
 
-
-      set -g status-left ""
+      set -g status-left " "
       set -g status-right ""
-      set -g window-status-current-style 'bg=color2,fg=color0'
-      set -g window-status-format ' #W#{?window_zoomed_flag,*,} '
-      set -g window-status-current-format ' #[bold]#W#{?window_zoomed_flag,*,} '
+      set -g window-status-style 'fg=#686868'
+      set -g window-status-format '#[bold]#I #W#{?window_zoomed_flag,*,} '
+      set -g window-status-current-style 'fg=#CBAA89'
+      set -g window-status-current-format '#[bold]#I #W#{?window_zoomed_flag,*,} '
 
       bind-key -T copy-mode-vi 'v' send -X begin-selection
       bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle

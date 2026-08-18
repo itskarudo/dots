@@ -41,6 +41,7 @@
         nvim-lspconfig
         neo-tree-nvim
         nvim-treesitter
+        typescript-tools-nvim
         typst-preview-nvim
         vim-kitty-navigator
         vimtex
@@ -56,11 +57,12 @@
       nixd
       nixfmt
       prettierd
+      pyright
       ruff
       rust-analyzer
       stylua
+      texlab
       tinymist
-      ty
       typescript-language-server
       vscode-langservers-extracted
     ];

@@ -23,4 +23,4 @@ lint:
     nix run --inputs-from {{flake}} nixpkgs#deadnix -- --fail .
 
 gc:
-    nh clean all --keep 5 --keep-since 7d
+    nh clean all --keep 2 --keep-since 7d

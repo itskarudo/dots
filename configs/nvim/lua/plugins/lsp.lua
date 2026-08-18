@@ -1,7 +1,7 @@
 return {
-	"nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
-	after = function()
+	config = function()
 		vim.lsp.enable({
 			"astro",
 			"clangd",
@@ -9,11 +9,12 @@ return {
 			"html",
 			"jsonls",
 			"lua_ls",
+			"nixd",
+			"pyright",
 			"rust_analyzer",
+			"texlab",
 			"tinymist",
-			"ts_ls",
-			"ty",
-      "nixd",
+			"tsgo",
 		})
 	end,
 }

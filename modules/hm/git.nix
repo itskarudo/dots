@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name = "itskarudo";
+      user.name = "karu";
       user.email = "itskarudo@protonmail.com";
       init.defaultBranch = "main";
       pull.rebase = true;

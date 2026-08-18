@@ -8,6 +8,10 @@
 
   programs.home-manager.enable = true;
 
+  programs.discord = {
+    enable = true;
+  };
+
   home = {
     inherit username;
     homeDirectory = "/Users/${username}";
@@ -21,7 +25,6 @@
 
     packages = with pkgs; [
       avalonia-ilspy
-      discord
       iina
       imhex
       orbstack
@@ -37,7 +40,8 @@
   imports = [
     ./git.nix
     ./kitty.nix
-    ./neovim.nix
+    # ./neovim.nix
+    ./nys.nix
   ];
 
 }

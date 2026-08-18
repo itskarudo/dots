@@ -1,7 +1,10 @@
 {
   homebrew = {
     enable = true;
-    onActivation.cleanup = "none";
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
+    };
     brews = [
     ];
     casks = [
