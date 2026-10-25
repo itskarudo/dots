@@ -15,8 +15,9 @@ let
     stylua
     texlab
     tinymist
-    typescript-go
+    typescript_7
     vscode-langservers-extracted
+    yazi
   ];
 in
 {
@@ -43,7 +44,11 @@ in
       cmake
       eza
       neovim
+      nodejs
       ripgrep
+      (sage.override {
+        requireSageTests = false;
+      })
       uv
       wget
     ]

@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    master.url = "github:NixOS/nixpkgs/master";
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,8 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-wrapper-modules = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
+    nixcord = {
+      url = "github:4evy/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,7 +27,11 @@
     };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    mac-app-util.url = "github:hraban/mac-app-util";
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 

@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>x", function()
 end, { desc = "Delete buffer (confirm if modified)" })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { silent = true })
 vim.keymap.set("n", "<leader>ra", vim.lsp.buf.rename, { silent = true })
 

@@ -5,6 +5,7 @@ let
     home-manager
     mac-app-util
     nix-homebrew
+    nixcord
     ;
 
   brewModule = username: {
@@ -32,6 +33,7 @@ let
         mac-app-util.homeManagerModules.default
       ];
       users.${username}.imports = [
+        nixcord.homeModules.nixcord
         ../modules/hm
         ../modules/shell
       ];

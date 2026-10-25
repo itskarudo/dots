@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.tmux = {
     enable = true;
+    package = inputs.master.legacyPackages.${pkgs.stdenv.hostPlatform.system}.tmux;
     terminal = "tmux-256color";
     mouse = true;
     keyMode = "vi";

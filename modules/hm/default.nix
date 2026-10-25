@@ -8,10 +8,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.discord = {
-    enable = true;
-  };
-
   home = {
     inherit username;
     homeDirectory = "/Users/${username}";
@@ -26,21 +22,19 @@
     packages = with pkgs; [
       avalonia-ilspy
       iina
-      imhex
       orbstack
       qbittorrent
       qemu
       raycast
       utm
       wireshark
-      zathura
     ];
   };
 
   imports = [
+    ./discord.nix
     ./git.nix
     ./kitty.nix
-    # ./neovim.nix
     ./nys.nix
   ];
 

@@ -34,7 +34,9 @@
       yabai -m rule --add app="^QuickTime Player$" manage=off
       yabai -m rule --add app="^Weather$" manage=off
 
-      yabai -m rule --add app="^Arc$" manage=on
+      yabai -m rule --add app="^SlackowWall$" manage=off
+      yabai -m rule --add app="^java$" title="^Minecraft" manage=off
+      yabai -m rule --add title="^Ninjabrain Bot" manage=off
 
       yabai -m rule --add app=".*" sub-layer=normal
     '';
@@ -58,15 +60,15 @@
       ctrl + alt - k : yabai -m window --resize top:0:-100 ; yabai -m window --resize bottom:0:-100
       ctrl + alt - l : yabai -m window --resize right:100:0 ; yabai -m window --resize left:100:0
 
-      alt - 1 : yabai -m space --focus 1
-      alt - 2 : yabai -m space --focus 2
-      alt - 3 : yabai -m space --focus 3
-      alt - 4 : yabai -m space --focus 4
-      alt - 5 : yabai -m space --focus 5
-      alt - 6 : yabai -m space --focus 6
-      alt - 7 : yabai -m space --focus 7
-      alt - 8 : yabai -m space --focus 8
-      alt - 9 : yabai -m space --focus 9
+      # alt - 1 : yabai -m space --focus 1
+      # alt - 2 : yabai -m space --focus 2
+      # alt - 3 : yabai -m space --focus 3
+      # alt - 4 : yabai -m space --focus 4
+      # alt - 5 : yabai -m space --focus 5
+      # alt - 6 : yabai -m space --focus 6
+      # alt - 7 : yabai -m space --focus 7
+      # alt - 8 : yabai -m space --focus 8
+      # alt - 9 : yabai -m space --focus 9
 
       alt + shift - 1 : yabai -m window --space 1 --focus
       alt + shift - 2 : yabai -m window --space 2 --focus
